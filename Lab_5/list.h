@@ -1,5 +1,6 @@
 #pragma once
 #include "Node.h"
+
 class list
 {
 private:
@@ -11,6 +12,9 @@ public:
 	void addLast(const double& n_Element);
 	double removeFirst();
 	double removeLast();
+	double remove(const double& s_element);
+	void taskFunction();
+
 	void show();
 
 };

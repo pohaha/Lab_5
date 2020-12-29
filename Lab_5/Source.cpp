@@ -1,12 +1,12 @@
 #include "list.h"
+#include <stdlib.h>
+#include<iostream>
 int main()
 {
 	list test;
-	test.addFirst(10);
-	/*test.addLast(20);
-	test.addFirst(5);
-	test.addLast(30);*/
+	for (unsigned int i = 0; i < 10; i++) test.addFirst(rand() % 50+1);
 	test.show();
-	test.removeLast();
+	std::cout << "\n";
+	test.taskFunction();
 	test.show();
 }

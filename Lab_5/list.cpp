@@ -63,6 +63,72 @@ double list::removeLast()
 	return 0.0;
 }
 
+
+
+double list::remove(const double& s_element)
+{
+	Double_Node* previous = nullptr;
+	Double_Node* current = head;
+	while (current != nullptr)
+	{
+		if (current->m_data == s_element)
+		{
+			if (current == head) return removeFirst();
+			if (current == tail) return removeLast();
+			Current_Size--;
+			previous->next = current->next;
+			double rt_value = current->m_data;
+			delete current;
+			return rt_value;
+		}
+		previous = current;
+		current = current->next;
+	}
+	std::cout << "no such element in a list!!" << std::endl;
+	return 0.0;
+}
+
+void list::taskFunction()
+{
+	Double_Node* Max = head;
+	Double_Node* Min = head;
+	Double_Node* current = head;
+	bool Mode = false;
+	while (current != nullptr)
+	{
+		if ((current->m_data) < (Min->m_data))
+		{
+			Min = current;
+			Mode = false;
+		}
+		if ((current->m_data) >= (Max->m_data))
+		{
+			Max = current;
+			Mode = true;
+		}
+		current = current->next;
+	}
+	std::cout << "Min is: " << Min->m_data << std::endl;
+	std::cout << "Max is: " << Max->m_data << std::endl<<std::endl;
+	if(Mode)
+	{
+		while (Min->next != Max)
+		{
+			Min = Min->next;
+			Min->m_data = 0;
+		}
+	}
+	else
+	{
+		while (Max->next != Min)
+		{
+			Max = Max->next;
+			Max->m_data = 0;
+		}
+	}
+	
+}
+
 void list::show()
 {
 	Double_Node* tmp = head;
