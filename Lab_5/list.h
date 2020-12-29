@@ -9,6 +9,7 @@ private:
 public:
 	void addFirst(const double& n_Element);
 	void addLast(const double& n_Element);
+	double removeLast();
 	void show();
 
 };

@@ -1,4 +1,5 @@
 #include "list.h"
+#include <iostream>
 
 void list::addFirst(const double& n_Element)
 {
@@ -22,6 +23,25 @@ void list::addLast(const double& n_Element)
 	tail->next = n_Node;
 	tail = n_Node;
 	Current_Size++;
+}
+
+double list::removeLast()
+{
+	if (head == null)
+	{
+		std::cout << "there are no elements in a list. Unable to remove elements!" << std::endl;
+		return 0;
+	}
+	else 
+	{
+		Double_Node* tmp = head;
+		double return_value = tmp->m_data;
+		if (head == tail) tail = tmp->next;
+		head = tmp->next;
+		delete tmp;
+		Current_Size--;
+		return return_value;
+	}
 }
 
 void list::show()
