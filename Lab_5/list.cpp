@@ -25,9 +25,9 @@ void list::addLast(const double& n_Element)
 	Current_Size++;
 }
 
-double list::removeLast()
+double list::removeFirst()
 {
-	if (head == null)
+	if (head == nullptr)
 	{
 		std::cout << "there are no elements in a list. Unable to remove elements!" << std::endl;
 		return 0;
@@ -47,9 +47,12 @@ double list::removeLast()
 void list::show()
 {
 	Double_Node* tmp = head;
-	for (unsigned int i = 0; i < Current_Size; i++)
-	{
-		tmp->show();
-		tmp = tmp->next;
-	}
+	if (Current_Size == 0) std::cout << "No elements to show!" << std::endl;
+	else
+		for (unsigned int i = 0; i < Current_Size; i++)
+		{
+			tmp->show();
+			tmp = tmp->next;
+		}
+
 }
