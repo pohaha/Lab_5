@@ -44,6 +44,25 @@ double list::removeFirst()
 	}
 }
 
+double list::removeLast()
+{
+	if (head == tail) return removeFirst();
+	Double_Node* previous = nullptr;
+	Double_Node* current=head;
+	while (current!=tail)
+	{
+		previous = current;
+		current = current->next;
+	}
+	tail = previous;
+	double rt_val = current->m_data;
+	delete current;
+	Current_Size--;
+	return rt_val;
+
+	return 0.0;
+}
+
 void list::show()
 {
 	Double_Node* tmp = head;

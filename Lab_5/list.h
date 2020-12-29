@@ -10,6 +10,7 @@ public:
 	void addFirst(const double& n_Element);
 	void addLast(const double& n_Element);
 	double removeFirst();
+	double removeLast();
 	void show();
 
 };
