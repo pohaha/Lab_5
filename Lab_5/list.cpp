@@ -101,7 +101,7 @@ void list::taskFunction()
 			Min = current;
 			Mode = false;
 		}
-		if ((current->m_data) >= (Max->m_data))
+		if ((current->m_data) > (Max->m_data))
 		{
 			Max = current;
 			Mode = true;
@@ -110,12 +110,13 @@ void list::taskFunction()
 	}
 	std::cout << "Min is: " << Min->m_data << std::endl;
 	std::cout << "Max is: " << Max->m_data << std::endl<<std::endl;
+	int counter = 0;
 	if(Mode)
 	{
 		while (Min->next != Max)
 		{
 			Min = Min->next;
-			Min->m_data = 0;
+			counter++;
 		}
 	}
 	else
@@ -123,9 +124,10 @@ void list::taskFunction()
 		while (Max->next != Min)
 		{
 			Max = Max->next;
-			Max->m_data = 0;
+			counter++;
 		}
 	}
+	std::cout << "elements inbetween: " << counter << std::endl;
 	
 }
 

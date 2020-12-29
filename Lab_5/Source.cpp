@@ -8,5 +8,4 @@ int main()
 	test.show();
 	std::cout << "\n";
 	test.taskFunction();
-	test.show();
 }
