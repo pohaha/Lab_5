@@ -138,7 +138,7 @@ void list::show()
 	else
 		for (unsigned int i = 0; i < Current_Size; i++)
 		{
-			tmp->show();
+			tmp->show(i+1);
 			tmp = tmp->next;
 		}
 
